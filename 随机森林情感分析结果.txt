@@ -1,0 +1,83 @@
+三国演义书评534条三分类：
+Call:
+ randomForest(x = subset(train, select = -label), y = train[,      "label"], ntree = 100, importance = TRUE, proximity = FALSE) 
+               Type of random forest: classification
+                     Number of trees: 100
+No. of variables tried at each split: 182
+
+        OOB estimate of  error rate: 44.92%
+Confusion matrix:
+  3   4   5 class.error
+3 0   8   9   1.0000000
+4 0  99 121   0.5500000
+5 0 101 194   0.3423729
+（行是真实值，列是预测值）
+
+三国书评627条三分类：
+Call:
+ randomForest(x = subset(train, select = -label), y = train[,      "label"], ntree = 100, importance = TRUE, proximity = FALSE) 
+               Type of random forest: classification
+                     Number of trees: 100
+No. of variables tried at each split: 202
+
+        OOB estimate of  error rate: 41.51%
+Confusion matrix:
+  1   2   3 class.error
+1 0  12  11   1.0000000
+2 0 114 135   0.5421687
+3 0 101 251   0.2869318
+
+三国书评627条二分类：
+Call:
+ randomForest(x = subset(train, select = -label), y = train[,      "label"], ntree = 100, importance = TRUE, proximity = FALSE) 
+               Type of random forest: classification
+                     Number of trees: 100
+No. of variables tried at each split: 209
+
+        OOB estimate of  error rate: 40.64%
+Confusion matrix:
+    2   3 class.error
+2 143 129   0.4742647
+3 125 228   0.3541076
+
+三国志93条三分类：
+Call:
+ randomForest(x = subset(train, select = -label), y = train[,      "label"], ntree = 100, importance = TRUE, proximity = FALSE) 
+               Type of random forest: classification
+                     Number of trees: 100
+No. of variables tried at each split: 131
+
+        OOB estimate of  error rate: 31.18%
+Confusion matrix:
+  1  2 3 class.error
+1 0  2 4  1.00000000
+2 1 57 0  0.01724138
+3 0 22 7  0.75862069
+
+三国志93条三分类：去掉了小于1的TFIDF值（这样有一条评论就没了）
+Call:
+ randomForest(x = subset(train, select = -label), y = train[,      "label"], ntree = 100, importance = TRUE, proximity = FALSE) 
+               Type of random forest: classification
+                     Number of trees: 100
+No. of variables tried at each split: 131
+
+        OOB estimate of  error rate: 46.74%
+Confusion matrix:
+  1  2  3 class.error
+1 0  2  4   1.0000000
+2 0 45 12   0.2105263
+3 0 25  4   0.8620690
+
+三国志93条三分类：随便去掉了几个看着太小的TFIDF
+Call:
+ randomForest(x = subset(train, select = -label), y = train[,      "label"], ntree = 100, importance = TRUE, proximity = FALSE) 
+               Type of random forest: classification
+                     Number of trees: 100
+No. of variables tried at each split: 131
+
+        OOB estimate of  error rate: 30.11%
+Confusion matrix:
+  1  2 3 class.error
+1 0  3 3  1.00000000
+2 0 57 1  0.01724138
+3 0 21 8  0.72413793

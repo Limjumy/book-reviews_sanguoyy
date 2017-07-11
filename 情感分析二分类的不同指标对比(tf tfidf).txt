@@ -1,0 +1,30 @@
+627条书评情感分析（二分类）：指标为tfidf
+#Call:
+#  randomForest(x = subset(train, select = -label), y = train[,      "label"], ntree = 100, importance = TRUE, proximity = FALSE) 
+#Type of random forest: classification
+#Number of trees: 100
+#No. of variables tried at each split: 209
+
+#OOB estimate of  error rate: 40.64%
+#Confusion matrix:
+#  2   3 class.error
+#2 143 129   0.4742647
+#3 125 228   0.3541076
+
+627条书评情感分析（二分类）：指标为tf*tfidf
+
+traintfidf$zhuomo<-traintfidf$tf*traintfidf$tfidf
+train <- dcast(data = traintfidf, 
+               id + label ~ term, sum, value.var = "zhuomo")
+结果：
+Call:
+ randomForest(x = subset(train, select = -label), y = train[,      "label"], ntree = 100, importance = TRUE, proximity = FALSE) 
+               Type of random forest: classification
+                     Number of trees: 100
+No. of variables tried at each split: 209
+
+        OOB estimate of  error rate: 40.96%
+Confusion matrix:
+    2   3 class.error
+2 144 128   0.4705882
+3 128 225   0.3626062
